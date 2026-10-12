@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Учебный интернет-магазин</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -42,17 +43,21 @@
           <h3>Товар 1</h3>
           <p>Товар из учебного каталога.</p>
           <p class="product-price">Цена: 1000 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Товар 1">Заказать</button>
         </article>
         <article class="product-card" id="product-2">
           <h3>Товар 2</h3>
           <p>Товар из учебного каталога.</p>
           <p class="product-price">Цена: 1500 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Товар 2">Заказать</button>
         </article>
         <article class="product-card" id="product-3">
           <h3>Товар 3</h3>
           <p>Товар из учебного каталога.</p>
           <p class="product-price">Цена: 2000 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Товар 3">Заказать</button>
         </article>
+      <p class="success-message" id="success-message" role="status" hidden>Форма успешно отправлена!</p>
     </section>
 
     <aside class="aside-info">
@@ -64,7 +69,69 @@
     <div class="footer-inner">
       <p>&copy; 2026 Учебный интернет-магазин</p>
       <p>Фронтенд и бэкенд разработка</p>
+      <p>Вопрос по товару? <button class="text-button" type="button" data-product="Консультация">Оставить заявку</button></p>
     </div>
   </footer>
+
+<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+  <h2 id="order-dialog-title">Оформление заявки</h2>
+  <p id="product-caption"></p>
+  <p class="form-note">Учебная форма. Данные не отправляются на сервер.</p>
+  <form class="order-form" id="order-form" action="#" method="post" novalidate>
+    <input id="selected-product" name="selected-product" type="hidden">
+
+    <div class="form-field">
+      <label for="order-name">Имя</label>
+      <input id="order-name" name="name" type="text" minlength="2"
+             placeholder="Введите ваше имя" autocomplete="given-name" required>
+    </div>
+
+    <div class="form-field">
+      <label for="order-email">E-mail</label>
+      <input id="order-email" name="email" type="email"
+             placeholder="example@mail.ru" autocomplete="email" required>
+    </div>
+
+    <div class="form-field">
+      <label for="order-phone">Телефон</label>
+      <input id="order-phone" name="phone" type="tel" inputmode="tel"
+             placeholder="+7 (900) 000-00-00" autocomplete="tel"
+             pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+             aria-describedby="phone-hint" required>
+      <small id="phone-hint">Формат: +7 (900) 000-00-00</small>
+    </div>
+
+    <div class="form-field">
+      <label for="order-date">Дата связи</label>
+      <input id="order-date" name="date" type="date">
+    </div>
+
+    <div class="form-field">
+      <label for="order-topic">Тема заявки</label>
+      <select id="order-topic" name="topic" required>
+        <option value="">Выберите тему</option>
+        <option value="product">Заказ товара</option>
+        <option value="consultation">Консультация</option>
+        <option value="delivery">Доставка</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="order-comment">Комментарий</label>
+      <textarea id="order-comment" name="comment" rows="3"
+                placeholder="Укажите дополнительную информацию"></textarea>
+    </div>
+
+    <div class="form-field form-field--checkbox">
+      <input id="order-agreement" name="agreement" type="checkbox" required>
+      <label for="order-agreement">Я согласен на обработку данных</label>
+    </div>
+
+    <div class="form-actions">
+      <button class="button button-secondary" type="button" id="close-order-dialog">Закрыть</button>
+      <button class="button" type="submit">Отправить заявку</button>
+    </div>
+  </form>
+</dialog>
 </body>
 </html>
