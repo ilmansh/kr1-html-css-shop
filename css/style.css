@@ -94,6 +94,22 @@ a {
   background-color: var(--color-primary-dark);
 }
 
+/* Кнопка закреплена в окне при прокрутке страницы */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+body#top {
+  padding-bottom: 64px;
+}
+
+body#top:target {
+  outline: none;
+}
+
 .hero {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
