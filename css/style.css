@@ -280,3 +280,33 @@ a:hover, .text-button:hover {
 .form-field [aria-invalid="true"] {
   border-color: var(--color-danger);
 }
+
+/* Переходы между страницами и разделами */
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+}
+
+.site-nav__list [aria-current="page"] {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.contact-list li {
+  margin-bottom: var(--space-sm);
+}
