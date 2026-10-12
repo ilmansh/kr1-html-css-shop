@@ -7,17 +7,64 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header><h1>Учебный интернет-магазин</h1></header>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="#advantages">Преимущества</a></li>
+          <li><a href="#popular">Популярные товары</a></li>
+          <li><a href="#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <main>
-    <section>
-      <h2>Главная страница проекта</h2>
-      <p>Учебный каталог товаров.</p>
+    <section class="hero">
+      <h1>Учебный интернет-магазин</h1>
+      <p>Каталог товаров с ценами и краткими описаниями. Выберите товар и оставьте заявку.</p>
+      <a class="button" href="#popular">Перейти к товарам</a>
     </section>
-    <section class="project-description">
+
+    <section class="section" id="advantages">
+      <h2>Преимущества</h2>
+      <ul class="advantages-list">
+        <li>Цены указаны в карточках товаров.</li>
+        <li>Для заявки не нужна регистрация.</li>
+        <li>Вопросы о товаре можно оставить в комментарии к заявке.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="popular">
+      <h2>Популярные товары</h2>
+        <article class="product-card" id="product-1">
+          <h3>Товар 1</h3>
+          <p>Товар из учебного каталога.</p>
+          <p class="product-price">Цена: 1000 руб.</p>
+        </article>
+        <article class="product-card" id="product-2">
+          <h3>Товар 2</h3>
+          <p>Товар из учебного каталога.</p>
+          <p class="product-price">Цена: 1500 руб.</p>
+        </article>
+        <article class="product-card" id="product-3">
+          <h3>Товар 3</h3>
+          <p>Товар из учебного каталога.</p>
+          <p class="product-price">Цена: 2000 руб.</p>
+        </article>
+    </section>
+
+    <aside class="aside-info">
       <h2>О проекте</h2>
-      <p>Сайт создаётся на практических занятиях по фронтенд и бэкенд разработке.</p>
-    </section>
+      <p>Учебный сайт по дисциплине «Фронтенд и бэкенд разработка». Товары и цены приведены для примера.</p>
+    </aside>
   </main>
-  <footer><p>&copy; 2026 Учебный проект</p></footer>
+  <footer id="contacts">
+    <div class="footer-inner">
+      <p>&copy; 2026 Учебный интернет-магазин</p>
+      <p>Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
 </body>
 </html>
