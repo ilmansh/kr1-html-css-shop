@@ -405,3 +405,37 @@ html {
   border-radius: var(--radius-sm);
   font: inherit;
 }
+
+/* Страница товара и условия получения */
+.product-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product-detail__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-detail__title { margin-top: 0; }
+.product-detail__price { font-size: 28px; font-weight: 700; }
+.product-detail__link { display: block; margin-top: var(--space-md); }
+
+.product-table { width: 100%; border-collapse: collapse; }
+.product-table__caption { text-align: left; font-weight: 700; margin-bottom: var(--space-sm); }
+.product-table th, .product-table td {
+  padding: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+.product-table tbody th { font-weight: 400; }
+
+.faq-item { padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border); }
+.faq-item__question { cursor: pointer; font-weight: 700; }
+.faq-item__answer { max-width: 70ch; }
