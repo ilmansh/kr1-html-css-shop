@@ -486,3 +486,32 @@ html {
 .product-table thead { background-color: var(--color-surface); }
 .faq-item__question { font-size: 18px; font-weight: 600; }
 .faq-item[open] { padding-bottom: var(--space-lg); }
+
+/* Оформление заявки */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+.order-form__group {
+  margin: 0 0 var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+}
+.order-form__legend { padding: 0 var(--space-sm); font-size: 20px; font-weight: 600; }
+.order-summary { padding: var(--space-lg); background-color: var(--color-surface); }
+.order-summary__title { margin-top: 0; font-size: 22px; }
+.order-summary__list { margin: 0 0 var(--space-lg); }
+.order-summary__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.order-summary__row dd { margin: 0; }
+.order-summary__row--total, .order-summary__total { font-size: 22px; font-weight: 700; }
+.success-message__title { margin-top: 0; font-size: 22px; }
+.success-message { margin-bottom: var(--space-xl); }
