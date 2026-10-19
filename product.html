@@ -15,10 +15,10 @@
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -26,11 +26,18 @@
   <main class="page__main">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link breadcrumbs__link--nested" href="catalog.html">Каталог</a>
       <span class="breadcrumbs__current" aria-current="page">Товары</span>
     </nav>
     <section class="section">
       <h1>Товары для рабочего стола</h1>
       <p>Описание, характеристики и стоимость каждого товара.</p>
+
+      <nav class="category-nav" aria-label="Разделы товаров">
+        <a class="category-nav__link" href="#notebook">Блокнот А5</a>
+        <a class="category-nav__link" href="#organizer">Органайзер</a>
+        <a class="category-nav__link" href="#lamp">Настольная лампа</a>
+      </nav>
     </section>
     <article class="product-detail" id="notebook">
       <div class="product-detail__visual">
@@ -102,8 +109,16 @@
   </main>
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p>&copy; 2026 Учебный интернет-магазин</p>
-      <p>Фронтенд и бэкенд разработка</p>
+      <div>
+        <p class="site-footer__name">ShopProject</p>
+        <p>Учебный интернет-магазин · 2026</p>
+      </div>
+      <nav class="footer-nav" aria-label="Разделы сайта">
+        <a class="footer-nav__link" href="index.html#advantages">Преимущества</a>
+        <a class="footer-nav__link" href="index.html#popular">Популярные товары</a>
+        <a class="footer-nav__link" href="delivery.html#faq">Вопросы и ответы</a>
+        <a class="footer-nav__link" href="order.html">Оставить заявку</a>
+      </nav>
     </div>
   </footer>
 </body>

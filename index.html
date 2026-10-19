@@ -16,10 +16,10 @@
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -56,22 +56,22 @@
       <h2 class="section__title">Три вещи для рабочего стола</h2>
       <div class="products-grid">
         <article class="product-card" id="product-1">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Товар из учебного каталога.</p>
+          <h3 class="product-card__title">Блокнот А5</h3>
+          <p class="product-card__description">Для записей и планов. Формат А5, 96 листов.</p>
           <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Блокнот А5">Заказать</button>
         </article>
         <article class="product-card" id="product-2">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Товар из учебного каталога.</p>
+          <h3 class="product-card__title">Органайзер</h3>
+          <p class="product-card__description">Три отделения для канцелярии и мелочей.</p>
           <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Органайзер">Заказать</button>
         </article>
         <article class="product-card" id="product-3">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Товар из учебного каталога.</p>
+          <h3 class="product-card__title">Настольная лампа</h3>
+          <p class="product-card__description">Направленный свет для чтения и работы.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">Заказать</button>
+          <button class="button button--primary product-card__button" type="button" data-product="Настольная лампа">Заказать</button>
         </article>
       </div>
       <p class="success-message" id="success-message" role="status" hidden>Форма успешно отправлена!</p>
@@ -84,9 +84,17 @@
   </main>
   <footer class="site-footer" id="contacts">
     <div class="site-footer__inner">
-      <p>&copy; 2026 Учебный интернет-магазин</p>
-      <p>Фронтенд и бэкенд разработка</p>
-      <p>Вопрос по товару? <button class="text-button" type="button" data-product="Консультация">Оставить заявку</button></p>
+      <div>
+        <p class="site-footer__name">ShopProject</p>
+        <p>Учебный интернет-магазин · 2026</p>
+      </div>
+      <nav class="footer-nav" aria-label="Разделы сайта">
+        <a class="footer-nav__link" href="index.html#advantages">Преимущества</a>
+        <a class="footer-nav__link" href="index.html#popular">Популярные товары</a>
+        <a class="footer-nav__link" href="delivery.html#faq">Вопросы и ответы</a>
+        <a class="footer-nav__link" href="order.html">Оставить заявку</a>
+      </nav>
+      <p><button class="text-button" type="button" data-product="Консультация">Задать вопрос о товаре</button></p>
     </div>
   </footer>
 
