@@ -35,20 +35,20 @@ body {
   background-color: var(--color-bg);
 }
 
-header, main, footer {
+.site-header, .page__main, .site-footer {
   padding: var(--space-lg);
 }
 
-header, footer {
+.site-header, .site-footer {
   background-color: var(--color-surface);
 }
 
-.site-header, .footer-inner {
+.site-header__inner, .site-footer__inner {
   max-width: var(--container-width);
   margin: 0 auto;
 }
 
-.site-logo {
+.site-header__logo {
   color: var(--color-text);
   font-size: 20px;
   font-weight: 700;
@@ -59,17 +59,18 @@ header, footer {
   margin: var(--space-md) 0 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-md);
 }
 
-.site-nav__list li {
-  margin-bottom: var(--space-sm);
-}
-
-.site-nav__list a {
+.site-nav__link {
   text-decoration: none;
 }
 
-.site-nav__list a:hover {
+.site-nav__link:hover {
   text-decoration: underline;
 }
 
@@ -83,13 +84,16 @@ a {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   font: inherit;
-  color: var(--color-bg);
-  background-color: var(--color-primary);
   text-decoration: none;
   cursor: pointer;
 }
 
-.button:hover {
+.button--primary {
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+}
+
+.button--primary:hover {
   color: var(--color-bg);
   background-color: var(--color-primary-dark);
 }
@@ -102,11 +106,11 @@ a {
   z-index: 1000;
 }
 
-body#top {
+.page--back-to-top {
   padding-bottom: 64px;
 }
 
-body#top:target {
+.page--back-to-top:target {
   outline: none;
 }
 
@@ -118,13 +122,13 @@ body#top:target {
   background-color: var(--color-accent);
 }
 
-.hero h1 {
+.hero__title {
   margin: 0 0 var(--space-md);
   font-size: 32px;
   line-height: 1.25;
 }
 
-.hero p {
+.hero__description {
   max-width: 72ch;
   margin-bottom: var(--space-lg);
 }
@@ -134,23 +138,22 @@ body#top:target {
   margin: 0 auto var(--space-xl);
 }
 
-.section h2, .aside-info h2 {
+.section__title, .aside-info__title {
   margin-top: 0;
 }
 
 .product-card {
-  margin-bottom: var(--space-md);
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: 0;
 }
 
-.product-card h3 {
-  margin-top: 0;
-}
-
-.product-price {
+.product-card__price {
   font-weight: 700;
 }
 
@@ -174,7 +177,7 @@ body#top:target {
   background-color: var(--color-bg);
 }
 
-.order-dialog h2 {
+.order-dialog__title {
   margin-top: 0;
 }
 
@@ -182,21 +185,21 @@ body#top:target {
   background-color: rgb(0 0 0 / 50%);
 }
 
-.form-note, .form-field small {
+.order-dialog__note, .order-form__hint {
   color: var(--color-muted);
   font-size: 14px;
 }
 
-.form-field {
+.order-form__field {
   margin-bottom: var(--space-md);
 }
 
-.form-field label {
+.order-form__label {
   display: block;
   margin-bottom: var(--space-xs);
 }
 
-.form-field input, .form-field select, .form-field textarea {
+.order-form__input {
   width: 100%;
   padding: var(--space-sm) 12px;
   border: 1px solid var(--color-border);
@@ -206,37 +209,37 @@ body#top:target {
   background-color: var(--color-bg);
 }
 
-.form-field textarea {
+.order-form__input--textarea {
   resize: vertical;
 }
 
-.form-field input[type="checkbox"] {
+.order-form__input--checkbox {
   width: auto;
 }
 
-.form-field--checkbox label {
+.order-form__label--checkbox {
   display: inline;
 }
 
-.form-field small {
+.order-form__hint {
   display: block;
   margin-top: var(--space-xs);
 }
 
-.form-actions {
+.order-form__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: var(--space-lg);
 }
 
-.button-secondary {
+.button--secondary {
   border-color: var(--color-border);
   color: var(--color-text);
   background-color: var(--color-surface);
 }
 
-.button-secondary:hover {
+.button--secondary:hover {
   color: var(--color-text);
   background-color: var(--color-accent);
 }
@@ -273,18 +276,16 @@ a:hover, .text-button:hover {
   color: var(--color-primary-dark);
 }
 
-.button:hover {
+.button--primary:hover {
   color: var(--color-bg);
 }
 
-.button-secondary:hover {
+.button--secondary:hover {
   color: var(--color-text);
 }
 
 .product-card:hover,
-.form-field input:hover,
-.form-field select:hover,
-.form-field textarea:hover {
+.order-form__input:hover {
   border-color: var(--color-primary);
 }
 
@@ -293,7 +294,7 @@ a:hover, .text-button:hover {
   cursor: not-allowed;
 }
 
-.form-field [aria-invalid="true"] {
+.order-form__input[aria-invalid="true"] {
   border-color: var(--color-danger);
 }
 
@@ -314,29 +315,22 @@ html {
   font-size: 14px;
 }
 
-.breadcrumbs span::before {
+.breadcrumbs__current::before {
   content: " / ";
 }
 
-.site-nav__list [aria-current="page"] {
+.site-nav__link--active {
   color: var(--color-text);
   text-decoration: underline;
 }
 
-.contact-list li {
+.contact-list__item {
   margin-bottom: var(--space-sm);
 }
 
 /* Раскладка меню, карточек и каталога */
-.site-nav__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: var(--space-md);
-}
 
-.site-nav__list li {
+.site-nav__item {
   margin-bottom: 0;
 }
 
@@ -346,18 +340,11 @@ html {
   gap: var(--space-lg);
 }
 
-.product-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin-bottom: 0;
-}
-
-.product-card h3, .product-card p {
+.product-card__title, .product-card__description, .product-card__price {
   margin: 0;
 }
 
-.product-card .button {
+.product-card__button {
   margin-top: auto;
   align-self: flex-start;
 }
@@ -385,7 +372,7 @@ html {
   min-width: 0;
 }
 
-.catalog-filters h2, .catalog-products h2 {
+.catalog-filters__title, .catalog-products__title {
   margin-top: 0;
 }
 
@@ -394,23 +381,23 @@ html {
   gap: var(--space-md);
 }
 
-.filters-form fieldset {
+.filters-form__group {
   margin: 0;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
 
-.filters-form legend {
+.filters-form__legend {
   font-weight: 700;
 }
 
-.filters-form label {
+.filters-form__label {
   display: block;
   margin-bottom: var(--space-sm);
 }
 
-.filters-form input[type="number"] {
+.filters-form__input {
   width: 100%;
   margin-bottom: var(--space-sm);
   padding: var(--space-sm);

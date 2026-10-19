@@ -8,31 +8,31 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
-<body id="top">
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
+<body class="page page--back-to-top" id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a href="index.html" aria-current="page">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main>
+  <main class="page__main">
     <section class="hero">
-      <h1>Учебный интернет-магазин</h1>
-      <p>Каталог товаров с ценами и краткими описаниями. Выберите товар и оставьте заявку.</p>
-      <a class="button" href="#popular">Перейти к товарам</a>
+      <h1 class="hero__title">Учебный интернет-магазин</h1>
+      <p class="hero__description">Каталог товаров с ценами и краткими описаниями. Выберите товар и оставьте заявку.</p>
+      <a class="button button--primary" href="#popular">Перейти к товарам</a>
     </section>
 
     <section class="section" id="advantages">
-      <h2>Преимущества</h2>
+      <h2 class="section__title">Преимущества</h2>
       <ul class="advantages-list">
         <li>Цены указаны в карточках товаров.</li>
         <li>Для заявки не нужна регистрация.</li>
@@ -41,37 +41,37 @@
     </section>
 
     <section class="section" id="popular">
-      <h2>Популярные товары</h2>
+      <h2 class="section__title">Популярные товары</h2>
       <div class="products-grid">
         <article class="product-card" id="product-1">
-          <h3>Товар 1</h3>
-          <p>Товар из учебного каталога.</p>
-          <p class="product-price">Цена: 1000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">Заказать</button>
+          <h3 class="product-card__title">Товар 1</h3>
+          <p class="product-card__description">Товар из учебного каталога.</p>
+          <p class="product-card__price">Цена: 1000 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">Заказать</button>
         </article>
         <article class="product-card" id="product-2">
-          <h3>Товар 2</h3>
-          <p>Товар из учебного каталога.</p>
-          <p class="product-price">Цена: 1500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 2">Заказать</button>
+          <h3 class="product-card__title">Товар 2</h3>
+          <p class="product-card__description">Товар из учебного каталога.</p>
+          <p class="product-card__price">Цена: 1500 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">Заказать</button>
         </article>
         <article class="product-card" id="product-3">
-          <h3>Товар 3</h3>
-          <p>Товар из учебного каталога.</p>
-          <p class="product-price">Цена: 2000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 3">Заказать</button>
+          <h3 class="product-card__title">Товар 3</h3>
+          <p class="product-card__description">Товар из учебного каталога.</p>
+          <p class="product-card__price">Цена: 2000 руб.</p>
+          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">Заказать</button>
         </article>
       </div>
       <p class="success-message" id="success-message" role="status" hidden>Форма успешно отправлена!</p>
     </section>
 
     <aside class="aside-info">
-      <h2>О проекте</h2>
+      <h2 class="aside-info__title">О проекте</h2>
       <p>Учебный сайт по дисциплине «Фронтенд и бэкенд разработка». Товары и цены приведены для примера.</p>
     </aside>
   </main>
-  <footer id="contacts">
-    <div class="footer-inner">
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
       <p>&copy; 2026 Учебный интернет-магазин</p>
       <p>Фронтенд и бэкенд разработка</p>
       <p>Вопрос по товару? <button class="text-button" type="button" data-product="Консультация">Оставить заявку</button></p>
@@ -79,41 +79,41 @@
   </footer>
 
 <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-  <h2 id="order-dialog-title">Оформление заявки</h2>
-  <p id="product-caption"></p>
-  <p class="form-note">Учебная форма. Данные не отправляются на сервер.</p>
+  <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+  <p class="order-dialog__product" id="product-caption"></p>
+  <p class="order-dialog__note">Учебная форма. Данные не отправляются на сервер.</p>
   <form class="order-form" id="order-form" action="#" method="post" novalidate>
     <input id="selected-product" name="selected-product" type="hidden">
 
-    <div class="form-field">
-      <label for="order-name">Имя</label>
-      <input id="order-name" name="name" type="text" minlength="2"
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-name">Имя</label>
+      <input class="order-form__input" id="order-name" name="name" type="text" minlength="2"
              placeholder="Введите ваше имя" autocomplete="given-name" required>
     </div>
 
-    <div class="form-field">
-      <label for="order-email">E-mail</label>
-      <input id="order-email" name="email" type="email"
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-email">E-mail</label>
+      <input class="order-form__input" id="order-email" name="email" type="email"
              placeholder="example@mail.ru" autocomplete="email" required>
     </div>
 
-    <div class="form-field">
-      <label for="order-phone">Телефон</label>
-      <input id="order-phone" name="phone" type="tel" inputmode="tel"
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-phone">Телефон</label>
+      <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel"
              placeholder="+7 (900) 000-00-00" autocomplete="tel"
              pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
              aria-describedby="phone-hint" required>
-      <small id="phone-hint">Формат: +7 (900) 000-00-00</small>
+      <small class="order-form__hint" id="phone-hint">Формат: +7 (900) 000-00-00</small>
     </div>
 
-    <div class="form-field">
-      <label for="order-date">Дата связи</label>
-      <input id="order-date" name="date" type="date">
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-date">Дата связи</label>
+      <input class="order-form__input" id="order-date" name="date" type="date">
     </div>
 
-    <div class="form-field">
-      <label for="order-topic">Тема заявки</label>
-      <select id="order-topic" name="topic" required>
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-topic">Тема заявки</label>
+      <select class="order-form__input" id="order-topic" name="topic" required>
         <option value="">Выберите тему</option>
         <option value="product">Заказ товара</option>
         <option value="consultation">Консультация</option>
@@ -121,23 +121,23 @@
       </select>
     </div>
 
-    <div class="form-field">
-      <label for="order-comment">Комментарий</label>
-      <textarea id="order-comment" name="comment" rows="3"
+    <div class="order-form__field">
+      <label class="order-form__label" for="order-comment">Комментарий</label>
+      <textarea class="order-form__input order-form__input--textarea" id="order-comment" name="comment" rows="3"
                 placeholder="Укажите дополнительную информацию"></textarea>
     </div>
 
-    <div class="form-field form-field--checkbox">
-      <input id="order-agreement" name="agreement" type="checkbox" required>
-      <label for="order-agreement">Я согласен на обработку данных</label>
+    <div class="order-form__field order-form__field--checkbox">
+      <input class="order-form__input order-form__input--checkbox" id="order-agreement" name="agreement" type="checkbox" required>
+      <label class="order-form__label order-form__label--checkbox" for="order-agreement">Я согласен на обработку данных</label>
     </div>
 
-    <div class="form-actions">
-      <button class="button button-secondary" type="button" id="close-order-dialog">Закрыть</button>
-      <button class="button" type="submit">Отправить заявку</button>
+    <div class="order-form__actions">
+      <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+      <button class="button button--primary" type="submit">Отправить заявку</button>
     </div>
   </form>
 </dialog>
-<a href="#top" class="button back-to-top">↑ Наверх</a>
+<a href="#top" class="button button--primary back-to-top">↑ Наверх</a>
 </body>
 </html>
