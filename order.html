@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Выбор товара и оформление учебной заявки.">
+  <title>Заявка — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/order.js" defer></script>
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page__main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Заявка</span>
+    </nav>
+    <section class="section">
+      <h1>Оформление заявки</h1>
+      <p>Выберите товар и способ получения. Перед подтверждением можно проверить и изменить данные.</p>
+      <p class="order-dialog__note">Учебная форма: данные не отправляются на сервер, оплата не требуется.</p>
+      <div class="success-message" id="order-success" role="status" hidden>
+        <h2 class="success-message__title">Форма успешно отправлена!</h2>
+        <p>Учебная заявка обработана в браузере. Реальный заказ не создавался.</p>
+        <a href="catalog.html">Вернуться в каталог</a>
+      </div>
+      <div class="checkout-layout">
+        <form class="order-form" id="checkout-form" action="#" method="post" novalidate>
+          <fieldset class="order-form__group">
+            <legend class="order-form__legend">1. Товар</legend>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-product">Товар</label>
+              <select class="order-form__input" id="checkout-product" name="product" required>
+                <option value="notebook" data-price="1000" data-name="Блокнот А5">Блокнот А5 — 1000 ₽</option>
+                <option value="organizer" data-price="1500" data-name="Органайзер">Органайзер — 1500 ₽</option>
+                <option value="lamp" data-price="2000" data-name="Настольная лампа">Настольная лампа — 2000 ₽</option>
+              </select>
+            </div>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-quantity">Количество</label>
+              <input class="order-form__input" id="checkout-quantity" name="quantity" type="number" min="1" max="10" step="1" value="1" required>
+            </div>
+          </fieldset>
+          <fieldset class="order-form__group">
+            <legend class="order-form__legend">2. Контакты</legend>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-name">Имя</label>
+              <input class="order-form__input" id="checkout-name" name="name" type="text" minlength="2" autocomplete="given-name" required>
+            </div>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-email">E-mail</label>
+              <input class="order-form__input" id="checkout-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-phone">Телефон</label>
+              <input class="order-form__input" id="checkout-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="checkout-phone-hint" required>
+              <small class="order-form__hint" id="checkout-phone-hint">Формат: +7 (900) 000-00-00</small>
+            </div>
+          </fieldset>
+          <fieldset class="order-form__group">
+            <legend class="order-form__legend">3. Получение</legend>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-delivery">Способ получения</label>
+              <select class="order-form__input" id="checkout-delivery" name="delivery">
+                <option value="pickup">Самовывоз — бесплатно</option>
+                <option value="courier">Курьер по Москве — 300 ₽</option>
+              </select>
+            </div>
+            <div class="order-form__field" id="address-field" hidden>
+              <label class="order-form__label" for="checkout-address">Адрес доставки</label>
+              <input class="order-form__input" id="checkout-address" name="address" type="text" minlength="5" autocomplete="street-address" disabled>
+            </div>
+            <div class="order-form__field">
+              <label class="order-form__label" for="checkout-comment">Комментарий (необязательно)</label>
+              <textarea class="order-form__input order-form__input--textarea" id="checkout-comment" name="comment" rows="3" maxlength="500"></textarea>
+            </div>
+          </fieldset>
+          <div class="order-form__field order-form__field--checkbox">
+            <input class="order-form__input order-form__input--checkbox" id="checkout-agreement" name="agreement" type="checkbox" required>
+            <label class="order-form__label order-form__label--checkbox" for="checkout-agreement">Я согласен на обработку данных</label>
+          </div>
+          <button class="button button--primary" type="submit">Проверить заявку</button>
+        </form>
+        <aside class="order-summary">
+          <h2 class="order-summary__title">Ваша заявка</h2>
+          <dl class="order-summary__list">
+            <div class="order-summary__row"><dt>Товар</dt><dd id="summary-product">Блокнот А5</dd></div>
+            <div class="order-summary__row"><dt>Количество</dt><dd id="summary-quantity">1</dd></div>
+            <div class="order-summary__row"><dt>Товары</dt><dd id="summary-subtotal">1 000 ₽</dd></div>
+            <div class="order-summary__row"><dt>Доставка</dt><dd id="summary-delivery">Бесплатно</dd></div>
+            <div class="order-summary__row order-summary__row--total"><dt>Итого</dt><dd id="summary-total">1 000 ₽</dd></div>
+          </dl>
+          <a href="delivery.html#methods">Условия получения</a>
+        </aside>
+      </div>
+    </section>
+    <dialog class="order-dialog" id="confirm-dialog" aria-labelledby="confirm-title">
+      <h2 class="order-dialog__title" id="confirm-title">Проверьте заявку</h2>
+      <p id="confirm-product"></p>
+      <p id="confirm-contact"></p>
+      <p id="confirm-delivery"></p>
+      <p class="order-summary__total" id="confirm-total"></p>
+      <p class="order-dialog__note">Подтверждение завершит учебную заявку только в браузере.</p>
+      <div class="order-form__actions">
+        <button class="button button--secondary" id="edit-order" type="button">Изменить</button>
+        <button class="button button--primary" id="confirm-order" type="button">Подтвердить</button>
+      </div>
+    </dialog>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__name">ShopProject</p>
+        <p>Учебный интернет-магазин · 2026</p>
+      </div>
+      <nav class="footer-nav" aria-label="Разделы сайта">
+        <a class="footer-nav__link" href="index.html#advantages">Преимущества</a>
+        <a class="footer-nav__link" href="index.html#popular">Популярные товары</a>
+        <a class="footer-nav__link" href="delivery.html#faq">Вопросы и ответы</a>
+        <a class="footer-nav__link" href="order.html">Оставить заявку</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

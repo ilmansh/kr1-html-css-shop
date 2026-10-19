@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Блокнот, органайзер и настольная лампа: описание, цены и характеристики.">
+  <title>Товары — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page__main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link breadcrumbs__link--nested" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current" aria-current="page">Товары</span>
+    </nav>
+    <section class="section">
+      <h1>Товары для рабочего стола</h1>
+      <p>Описание, характеристики и стоимость каждого товара.</p>
+
+      <nav class="category-nav" aria-label="Разделы товаров">
+        <a class="category-nav__link" href="#notebook">Блокнот А5</a>
+        <a class="category-nav__link" href="#organizer">Органайзер</a>
+        <a class="category-nav__link" href="#lamp">Настольная лампа</a>
+      </nav>
+    </section>
+    <article class="product-detail" id="notebook">
+      <div class="product-detail__visual">
+        <img class="product-detail__image" src="images/notebook.svg" alt="Блокнот А5" width="480" height="360">
+      </div>
+      <div class="product-detail__content">
+        <h2 class="product-detail__title">Блокнот А5</h2>
+        <p>Для записей, списков и планов. Твёрдая обложка защищает страницы в рюкзаке.</p>
+        <table class="product-table">
+          <caption class="product-table__caption">Характеристики</caption>
+          <thead><tr><th scope="col">Параметр</th><th scope="col">Значение</th></tr></thead>
+          <tbody>
+              <tr><th scope="row">Формат</th><td>А5</td></tr>
+              <tr><th scope="row">Количество листов</th><td>96</td></tr>
+              <tr><th scope="row">Разлиновка</th><td>Точка</td></tr>
+              <tr><th scope="row">Обложка</th><td>Твёрдая</td></tr>
+          </tbody>
+        </table>
+        <p class="product-detail__price">1000 ₽</p>
+        <a class="button button--primary" href="order.html?product=notebook">Оформить заявку</a>
+        <a class="product-detail__link" href="catalog.html">Вернуться в каталог</a>
+      </div>
+    </article>
+    <article class="product-detail" id="organizer">
+      <div class="product-detail__visual">
+        <img class="product-detail__image" src="images/organizer.svg" alt="Органайзер" width="480" height="360">
+      </div>
+      <div class="product-detail__content">
+        <h2 class="product-detail__title">Органайзер</h2>
+        <p>Три отделения для ручек, карандашей и мелочей. Помогает освободить место на столе.</p>
+        <table class="product-table">
+          <caption class="product-table__caption">Характеристики</caption>
+          <thead><tr><th scope="col">Параметр</th><th scope="col">Значение</th></tr></thead>
+          <tbody>
+              <tr><th scope="row">Материал</th><td>Дерево</td></tr>
+              <tr><th scope="row">Отделения</th><td>3</td></tr>
+              <tr><th scope="row">Размер</th><td>24 × 10 × 12 см</td></tr>
+              <tr><th scope="row">Цвет</th><td>Натуральный</td></tr>
+          </tbody>
+        </table>
+        <p class="product-detail__price">1500 ₽</p>
+        <a class="button button--primary" href="order.html?product=organizer">Оформить заявку</a>
+        <a class="product-detail__link" href="catalog.html">Вернуться в каталог</a>
+      </div>
+    </article>
+    <article class="product-detail" id="lamp">
+      <div class="product-detail__visual">
+        <img class="product-detail__image" src="images/lamp.svg" alt="Настольная лампа" width="480" height="360">
+      </div>
+      <div class="product-detail__content">
+        <h2 class="product-detail__title">Настольная лампа</h2>
+        <p>Направленный свет для чтения и работы. Положение плафона можно менять.</p>
+        <table class="product-table">
+          <caption class="product-table__caption">Характеристики</caption>
+          <thead><tr><th scope="col">Параметр</th><th scope="col">Значение</th></tr></thead>
+          <tbody>
+              <tr><th scope="row">Источник света</th><td>LED</td></tr>
+              <tr><th scope="row">Мощность</th><td>8 Вт</td></tr>
+              <tr><th scope="row">Питание</th><td>От сети</td></tr>
+              <tr><th scope="row">Цвет</th><td>Тёмно-синий</td></tr>
+          </tbody>
+        </table>
+        <p class="product-detail__price">2000 ₽</p>
+        <a class="button button--primary" href="order.html?product=lamp">Оформить заявку</a>
+        <a class="product-detail__link" href="catalog.html">Вернуться в каталог</a>
+      </div>
+    </article>
+
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__name">ShopProject</p>
+        <p>Учебный интернет-магазин · 2026</p>
+      </div>
+      <nav class="footer-nav" aria-label="Разделы сайта">
+        <a class="footer-nav__link" href="index.html#advantages">Преимущества</a>
+        <a class="footer-nav__link" href="index.html#popular">Популярные товары</a>
+        <a class="footer-nav__link" href="delivery.html#faq">Вопросы и ответы</a>
+        <a class="footer-nav__link" href="order.html">Оставить заявку</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

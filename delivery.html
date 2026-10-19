@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Способы получения товаров и ответы на вопросы об учебном заказе.">
+  <title>Доставка — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="delivery.html" aria-current="page">Доставка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page__main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Доставка</span>
+    </nav>
+    <section class="section">
+      <h1>Доставка и получение</h1>
+      <p>Выберите подходящий способ при оформлении заявки.</p>
+      <p>Условия приведены для учебного примера. Реальные заказы и оплата на сайте не принимаются.</p>
+    </section>
+    <section class="section" id="methods">
+      <h2 class="section__title">Как получить заказ</h2>
+      <table class="product-table">
+        <caption class="product-table__caption">Способы получения</caption>
+        <thead><tr><th scope="col">Способ</th><th scope="col">Стоимость</th><th scope="col">Срок</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Самовывоз</th><td>Бесплатно</td><td>На следующий день</td></tr>
+          <tr><th scope="row">Курьер по Москве</th><td>300 ₽</td><td>1–3 дня</td></tr>
+        </tbody>
+      </table>
+      <p>При самовывозе адрес пункта уточняется после подтверждения. Для курьера нужен адрес доставки.</p>
+    </section>
+    <section class="section" id="faq">
+      <h2 class="section__title">Вопросы о заявке</h2>
+      <details class="faq-item">
+        <summary class="faq-item__question">Когда нужно оплачивать заказ?</summary>
+        <p class="faq-item__answer">На учебном сайте оплата не предусмотрена. В форме не нужно вводить данные банковской карты.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__question">Можно ли изменить товар перед подтверждением?</summary>
+        <p class="faq-item__answer">Да. На странице заявки можно выбрать другой товар, изменить количество и способ получения.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__question">Как посмотреть характеристики?</summary>
+        <p class="faq-item__answer">Откройте <a href="product.html">страницу товаров</a>: для каждого есть описание и таблица характеристик.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-item__question">Заявка отправляется в магазин?</summary>
+        <p class="faq-item__answer">Нет. Форма показывает проверку полей и подтверждение в браузере. Данные на сервер не отправляются.</p>
+      </details>
+      <p><a class="button button--primary" href="order.html">Перейти к заявке</a></p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__name">ShopProject</p>
+        <p>Учебный интернет-магазин · 2026</p>
+      </div>
+      <nav class="footer-nav" aria-label="Разделы сайта">
+        <a class="footer-nav__link" href="index.html#advantages">Преимущества</a>
+        <a class="footer-nav__link" href="index.html#popular">Популярные товары</a>
+        <a class="footer-nav__link" href="delivery.html#faq">Вопросы и ответы</a>
+        <a class="footer-nav__link" href="order.html">Оставить заявку</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
