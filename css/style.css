@@ -1,13 +1,13 @@
 /* Переменные */
 :root {
-  --color-bg: #ffffff;
-  --color-text: #222222;
-  --color-muted: #666666;
-  --color-primary: #0057b8;
-  --color-primary-dark: #003f86;
-  --color-border: #dddddd;
-  --color-surface: #f7f7f7;
-  --color-accent: #eef5ff;
+  --color-bg: #fffdf9;
+  --color-text: #21343c;
+  --color-muted: #626b6c;
+  --color-primary: #98452e;
+  --color-primary-dark: #73321f;
+  --color-border: #d9d7ce;
+  --color-surface: #f2f0e9;
+  --color-accent: #eae3d6;
   --color-danger: #b00020;
   --color-success: #168a2f;
   --color-success-bg: #eefaf0;
@@ -16,9 +16,9 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
   --container-width: 1100px;
 }
 
@@ -29,7 +29,7 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -50,8 +50,9 @@ body {
 
 .site-header__logo {
   color: var(--color-text);
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -1px;
   text-decoration: none;
 }
 
@@ -115,27 +116,33 @@ a {
 }
 
 .hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
   max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
-  padding: var(--space-xl) var(--space-lg);
-  border-radius: var(--radius-lg);
+  margin: 0 auto 48px;
+  padding: 40px;
   background-color: var(--color-accent);
 }
 
 .hero__title {
-  margin: 0 0 var(--space-md);
-  font-size: 32px;
-  line-height: 1.25;
+  margin: 0 0 var(--space-lg);
+  font-family: Georgia, serif;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1px;
 }
 
 .hero__description {
-  max-width: 72ch;
+  max-width: 46ch;
   margin-bottom: var(--space-lg);
+  color: var(--color-muted);
 }
 
 .section {
   max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
+  margin: 0 auto 48px;
 }
 
 .section__title, .aside-info__title {
@@ -351,7 +358,7 @@ html {
 
 .catalog-layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 240px minmax(0, 1fr);
   grid-template-areas: "filters products";
   gap: var(--space-lg);
   max-width: var(--container-width);
@@ -439,3 +446,43 @@ html {
 .faq-item { padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border); }
 .faq-item__question { cursor: pointer; font-weight: 700; }
 .faq-item__answer { max-width: 70ch; }
+
+/* Оформление магазина */
+.site-header { border-bottom: 1px solid var(--color-border); }
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+.site-nav__list { margin-top: 0; }
+.site-nav__link { color: var(--color-text); font-size: 14px; }
+.site-nav__link--active { color: var(--color-primary); text-underline-offset: 6px; }
+.page__main { padding-top: 40px; }
+.hero__eyebrow { margin: 0 0 var(--space-lg); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+.hero__guide { padding: var(--space-lg); border: 1px solid #bcb7ab; align-self: center; }
+.hero__guide-title { margin-top: 0; font-size: 18px; }
+.hero__steps { padding-left: 20px; }
+.hero__step { padding: var(--space-sm) 0 var(--space-sm) var(--space-sm); }
+.section__title { font-size: 28px; font-weight: 600; }
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  padding-left: 20px;
+}
+.product-card { padding: var(--space-lg); }
+.product-card__title { font-size: 21px; font-weight: 600; }
+.product-card__description { color: var(--color-muted); }
+.product-card__price { padding: var(--space-sm) 0; font-size: 19px; }
+.site-footer { background-color: var(--color-text); color: var(--color-bg); }
+.site-footer__inner { font-size: 14px; }
+.site-footer .text-button { color: #f6c9ac; }
+.product-detail { padding-top: var(--space-lg); margin-bottom: 48px; }
+.product-detail__title { font-size: 28px; font-weight: 600; }
+.product-detail__visual { align-self: start; }
+.product-table { font-size: 15px; }
+.product-table thead { background-color: var(--color-surface); }
+.faq-item__question { font-size: 18px; font-weight: 600; }
+.faq-item[open] { padding-bottom: var(--space-lg); }
